@@ -2,9 +2,9 @@ pragma solidity ^0.8.19;
 // SPDX-License-Identifier: MIT
 
 import {Test, console} from "forge-std/Test.sol";
-import {FundMe} from "../src/FundMe.sol";
-import {DeployFundMe} from "../script/DeployFundMe.s.sol";
-import {PriceConverter} from "../src/PriceConverter.sol";
+import {FundMe} from "../../src/FundMe.sol";
+import {DeployFundMe} from "../../script/DeployFundMe.s.sol";
+import {PriceConverter} from "../../src/PriceConverter.sol";
 
 contract FundMeTest is Test {
     FundMe fundMe;
@@ -20,7 +20,7 @@ contract FundMeTest is Test {
     }
 
     function setUp() external {
-        console.log("function setUp() external is called");
+        console.log("function setUp() external is called for contract FundMeTest");
         DeployFundMe deployer = new DeployFundMe();
         fundMe = deployer.run();
         vm.deal(USER, START_PRICE);

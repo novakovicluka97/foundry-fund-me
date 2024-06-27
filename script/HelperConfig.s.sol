@@ -18,10 +18,13 @@ contract HelperConfig is Script {
     constructor() {
         if (block.chainid == 11155111) {
             activeNetworkConfig = getSepoliaPriceFeedAddress();
+            console.log("################## Sepolia Network Selected ##################");
         } else if (block.chainid == 1) {
             activeNetworkConfig = getMainnetPriceFeedAddress();
+            console.log("################## Mainnet Network Selected ##################");
         } else {
             activeNetworkConfig = getAnvilPriceFeedAddress();
+            console.log("################## Anvil Network Selected ##################");
         }
     }
 
